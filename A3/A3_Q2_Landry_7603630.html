@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 3, question 2</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="cutebutton.css" />
+
+</head>
+
+<body>
+
+<div class="navigation">
+	<a href="#" id="launchQ2">Launch game</a>
+</div>
+
+<script type="text/javascript">
+function question2() {
+	var target = parseInt(Math.random() * 1000) + 1; // make int and adjust to interval 1-1000
+
+	while(true) {
+		var input = prompt('Guess the number!');
+		if(input == null) return;
+
+		input = parseInt(input);
+		if(input == target) {
+			alert('Congratulations. You guessed the number!');
+			return;
+		}
+		else if(input > target) {
+			alert('Too high. Try again.');
+		}
+		else {
+			alert('Too low. Try again.');
+		}
+	}
+}
+
+document.getElementById('launchQ2').onclick = function(e) {
+	e.preventDefault();
+	question2();
+};
+
+// no document.onready so just dropping this here
+question2();
+</script>
+
+</body>
+</html>

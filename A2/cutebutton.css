@@ -1,0 +1,17 @@
+div.navigation > a {
+	display: inline-block;
+	width: auto;
+	padding: 8px;
+	background-color: #28C;
+	border: 1px solid #39D;
+	border-radius: 3px;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #F5F5F5;
+	text-decoration: none;
+}
+
+div.navigation > a:hover {
+	background-color: #39D;
+	border-color: #4AE;
+	color: #FFF;
+}

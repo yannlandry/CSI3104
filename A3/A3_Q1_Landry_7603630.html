@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 3, question 1</title>
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+
+<p>
+	<button id="initFtoC">&deg;F to &deg;C</button>
+	<button id="initCtoF">&deg;C to &deg;F</button>
+</p>
+
+<script type="text/javascript">
+// a)
+function celsius(fahrenheit) {
+	return 5.0 / 9.0 * (fahrenheit - 32)
+}
+
+// b)
+function fahrenheit(celsius) {
+	return 9.0 / 5.0 * celsius + 32;
+}
+
+// Fahrenheit to Celsius
+document.getElementById('initFtoC').onclick = function() {
+	var input = prompt('Please enter a temperature in degrees Fahrenheit:');
+	if(input == null) return; // stop if user clicks cancel
+
+	output = celsius(parseInt(input));
+	alert(input + "\u00B0F is equivalent to " + output + "\u00B0C.");
+};
+
+// Celsius to Fahrenheit
+document.getElementById('initCtoF').onclick = function() {
+	var input = prompt('Please enter a temperature in degrees Celsius:');
+	if(input == null) return; // stop if user clicks cancel
+
+	output = fahrenheit(parseInt(input));
+	alert(input + "\u00B0C is equivalent to " + output + "\u00B0F.");
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+h1 {
+	text-align: center;
+	font-family: sans-serif;
+}
+
+table#puzzle {
+	margin: 0 auto;
+	border-spacing: 8px;
+	background-color: #FC0;
+	border-radius: 13px;
+}
+
+table#puzzle td {
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	background-color: #B80;
+	border-radius: 5px;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	color: #FFF;
+	box-shadow: 1px 1px 3px #000;
+	text-shadow: 1px 1px 1px #000;
+}
+
+td.tile_0 {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
+
+td.tile_0:before { content: ""; }
+td.tile_1:before { content: "1"; }
+td.tile_2:before { content: "2"; }
+td.tile_3:before { content: "3"; }
+td.tile_4:before { content: "4"; }
+td.tile_5:before { content: "5"; }
+td.tile_6:before { content: "6"; }
+td.tile_7:before { content: "7"; }
+td.tile_8:before { content: "8"; }
+td.tile_9:before { content: "9"; }
+td.tile_10:before { content: "10"; }
+td.tile_11:before { content: "11"; }
+td.tile_12:before { content: "12"; }
+td.tile_13:before { content: "13"; }
+td.tile_14:before { content: "14"; }
+td.tile_15:before { content: "15"; }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 2, question 5</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="cutebutton.css" />
+</head>
+
+<body>
+
+<div class="navigation">
+	<a href="#" id="launchQ5">Launch script</a>
+</div>
+
+<script type="text/javascript">
+function question5() {
+	var a = prompt("Enter the first number:");
+		if(a == null) return; // on cancel
+
+	var b = prompt("Enter the second number:");
+		if(b == null) return; // on cancel
+
+	if(a % b == 0)
+		alert("The first number is a multiple of the second.");
+	else
+		alert("The first number is not a multiple of the second.");
+}
+
+document.getElementById("launchQ5").onclick = function(e) {
+	e.preventDefault();
+	question5();
+}
+
+// no document.onready so just dropping this here
+question5();
+</script>
+
+</body>
+</html>

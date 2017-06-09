@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Campus visit survey</title>
+
+</head>
+
+<body>
+
+<h1>Campus visit survey</h1>
+
+<p>Following your visit, we ask that you fill a short survey indicating what you liked/disliked about our campus.</p>
+
+<form action="http://www.deitel.com/" method="post">
+	<p><label for="name">Name: <input type="text" name="name" id="name" /></label></p>
+	<p><label for="email-address">Email address: <input type="email" name="email-address" id="email-address" /></label></p>
+	
+	<p>What did you like the most about the campus?
+		<br /><label for="like-campus"><input type="checkbox" name="like[]" value="campus" id="like-campus" /> Campus</label>
+		<br /><label for="like-students"><input type="checkbox" name="like[]" value="students" id="like-students" /> Students</label>
+		<br /><label for="like-location"><input type="checkbox" name="like[]" value="location" id="like-location" /> Location</label>
+		<br /><label for="like-atmosphere"><input type="checkbox" name="like[]" value="atmosphere" id="like-atmosphere" /> Atmosphere</label>
+		<br /><label for="like-dorm-rooms"><input type="checkbox" name="like[]" value="dorm-rooms" id="like-dorm-rooms" /> Dorm rooms</label>
+		<br /><label for="like-sports"><input type="checkbox" name="like[]" value="sports" id="like-sports" /> Sports</label>
+	</p>
+
+	<p>How did you became interested in our university?
+		<br /><label for="interest-friends"><input type="radio" name="interest" value="friends" id="interest-friends" /> Friends</label>
+		<br /><label for="interest-television"><input type="radio" name="interest" value="television" id="interest-television" /> Television</label>
+		<br /><label for="interest-internet"><input type="radio" name="interest" value="internet" id="interest-internet" /> Internet</label>
+		<br /><label for="interest-other"><input type="radio" name="interest" value="others" id="interest-other" /> Other</label>
+	</p>
+
+	<p><label for="additional-comments">Additional comments:
+		<br /><textarea name="additional-comments" id="additional-comments"></textarea></label></p>
+
+	<p>
+		<button type="submit">Submit</button>
+		<button type="reset">Reset</button>
+	</p>
+
+</form>
+
+</body>
+
+</html>

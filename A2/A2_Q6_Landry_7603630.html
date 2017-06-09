@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 2, question 6</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="cutebutton.css" />
+</head>
+
+<body>
+
+<div class="navigation">
+	<a href="#" id="launchQ6">Launch script</a>
+</div>
+
+<script type="text/javascript">
+function palindromable(num) {
+	if(typeof(num) != 'string' || num.length != 5 || num[0] == 0)
+		return false;
+	
+	for(i = 0; i < num.length; ++i)
+		if(num.charCodeAt(i) < 48 || num.charCodeAt(i) > 57)
+			return false;
+
+	return true;
+}
+
+function is_palindrome(num) {
+	var ita = 0;
+	var itb = num.length - 1;
+
+	while(ita < itb) {
+		if(num[ita] != num[itb])
+			return false; // diiiiie
+		++ita; --itb;
+	}
+
+	return true;
+}
+
+function question6() {
+	var num;
+
+	while(true) {
+		num = prompt("Enter a five-digit positive integer, not starting with zero:");
+		
+		if(num == null)
+			return;
+		else if(palindromable(num))
+			break;
+		else
+			alert("The number entered does not respect the required format. Please try again.");
+	}
+
+	if(is_palindrome(num))
+		alert("The number you entered is a palindrome.");
+	else
+		alert("The number you entered is not a palindrome.");
+}
+
+document.getElementById("launchQ6").onclick = function(e) {
+	e.preventDefault();
+	question6();
+}
+
+// no document.onready so just dropping this here
+question6();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 3, question 3</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="cutebutton.css" />
+
+</head>
+
+<body>
+
+<div class="navigation">
+	<a href="#" id="launchQ3">Launch game</a>
+</div>
+
+<script type="text/javascript">
+function question3() {
+	var target = parseInt(Math.random() * 1000) + 1; // make int and adjust to interval 1-1000
+	var attempts = 0;
+
+	while(true) {
+		// catch input, complain if not appropriate
+		while(true) {
+			var input = prompt('Guess the number!');
+			if(input == null) return;
+
+			input = parseInt(input);
+
+			if(isNaN(input) || input < 1 || input > 1000)
+				alert('Wrong input! You should enter a number between 1 and 1000.');
+			else
+				break;
+		}
+
+		++attempts;
+
+		if(input == target) {
+			if(attempts < 10)
+				alert('Either you know the secret or you got lucky!');
+			else if(attempts == 10)
+				alert('Ahah! You know the secret!');
+			else
+				alert('You should be able to do better!');
+			return;
+		}
+		else if(input > target) {
+			alert('Too high. Try again.');
+		}
+		else {
+			alert('Too low. Try again.');
+		}
+	}
+}
+
+document.getElementById('launchQ3').onclick = function(e) {
+	e.preventDefault();
+	question3();
+};
+
+// no document.onready so just dropping this here
+question3();
+</script>
+
+</body>
+</html>

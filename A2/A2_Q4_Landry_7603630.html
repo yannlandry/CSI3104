@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 2, question 4</title>
+	<meta charset="utf-8" />
+
+	<style type="text/css">
+	@-webkit-keyframes squary {
+		0%		{top: 0; left: 0;}
+		25%		{top: 0; left: 300px;}
+		50%		{top: 300px; left: 300px;}
+		75%		{top: 300px; left: 0;}
+		100%	{top: 0; left: 0;}
+	}
+
+	@keyframes squary {
+		0%		{top: 0; left: 0;}
+		25%		{top: 0; left: 300px;}
+		50%		{top: 300px; left: 300px;}
+		75%		{top: 300px; left: 0;}
+		100%	{top: 0; left: 0;}
+	}
+
+	div.squareinsquares {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		background-color: #F00;
+		color: #FFF;
+
+		-webkit-animation: squary 5s linear infinite;
+		animation: squary 5s linear infinite;
+	}
+	</style>
+</head>
+
+<body>
+
+<div class="squareinsquares">Hello.</div>
+
+</body>
+</html>

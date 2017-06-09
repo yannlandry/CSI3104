@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Website registration</title>
+
+</head>
+
+<body>
+
+<h1>Website registration</h1>
+
+<form method="post">
+	<p><label for="first-name">First name: <input type="text" name="first-name" id="first-name" /></label></p>
+	<p><label for="last-name">Last name: <input type="text" name="last-name" id="last-name" /></label></p>
+	<p><label for="email-address">Email address: <input type="email" name="email-address" id="email-address" /></label></p>
+
+	<details>
+		<summary>Optional question</summary>
+		
+		<p>Which university year are you currently in?<br />
+			<select name="university-year">
+				<option>Not yet in university</option>
+				<option>Freshman</option>
+				<option>Sophomore</option>
+				<option>Junior</option>
+				<option>Senior</option>
+				<option>Graduate</option>
+			</select>
+		</p>
+	</details>
+
+	<p>
+		<button type="submit">Submit</button>
+		<button type="reset">Reset</button>
+	</p>
+
+</form>
+
+</body>
+
+</html>

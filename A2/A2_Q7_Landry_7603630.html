@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Assignment 2, Question 7</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="cutebutton.css" />
+
+	<style type="text/css">
+	table#results {
+		display: none;
+	}
+	table#results td, table#results th {
+		padding: 3px 8px;
+	}
+	td.price, td.quantity {
+		text-align: center;
+	}
+	</style>
+</head>
+
+<body>
+
+<table id="results">
+	<thead>
+		<tr>
+			<th>Item #</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Total item price</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>$2.98</td>
+			<td class="quantity" id="item1-qty"></td>
+			<td class="price">$<span id="item1-price"></span></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>$4.50</td>
+			<td class="quantity" id="item2-qty"></td>
+			<td class="price">$<span id="item2-price"></span></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>$9.98</td>
+			<td class="quantity" id="item3-qty"></td>
+			<td class="price">$<span id="item3-price"></span></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>$4.49</td>
+			<td class="quantity" id="item4-qty"></td>
+			<td class="price">$<span id="item4-price"></span></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>$6.87</td>
+			<td class="quantity" id="item5-qty"></td>
+			<td class="price">$<span id="item5-price"></span></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="3">Grand total</th>
+			<th class="price">$<span id="total-price"></span></th>
+	</tfoot>
+</table>
+
+<div class="navigation">
+	<a href="http://local.textchange.ca" id="launchQ7">Launch script</a>
+</div>
+
+<script type="text/javascript">
+function grab_product_id() {
+	while(true) {
+		var id = prompt("Please enter the ID of the product sold, or -1 to display the total.");
+
+		if(id == null) return id;
+		else id = parseInt(id);
+
+		if(!isNaN(id) && id != 0 && id >= -1 && id <= 5) return id;
+		else alert("Please enter a numeric product ID between 1 and 5, or -1 to display the total.")
+	}
+}
+
+function grab_quantity(product) {
+	while(true) {
+		var qty = prompt("Please enter the quantity sold for product "+product+".");
+		
+		if(qty == null) return qty;
+		else qty = parseInt(qty);
+
+		if(!isNaN(qty) && qty > 0) return qty;
+		else alert("Please enter a numeric quantity greater than zero.");
+	}
+}
+
+function format_price(price) {
+	price = price.toString();
+
+	var cut = price.indexOf('.');
+	if(cut == -1) return price;
+
+	if(price.length - cut < 3) return price + '0'; // for prices like $3.5 to be converted to $3.50
+	else return price.substring(0, cut + 3); // enough digits after the dot, just make sure there's no more than 2
+}
+
+function question7() {
+	document.getElementById('results').style.display = 'none';
+
+	var sales = [0,0,0,0,0];
+
+	while(true) {
+		var item_id = grab_product_id();
+		if(item_id == null) return;
+		else if(item_id == -1) break;
+
+		var item_qty = grab_quantity(item_id);
+		if(item_qty == null) return;
+
+		sales[item_id - 1]+= item_qty;
+	}
+
+	var total = 0;
+	for(i = 0; i < sales.length; ++i) {
+		var item = i + 1;
+		var price = 0;
+
+		switch(item) {
+			case 1:
+				price = 2.98;
+				break;
+			case 2:
+				price = 4.50;
+				break;
+			case 3:
+				price = 9.98;
+				break;
+			case 4:
+				price = 4.49;
+				break;
+			case 5:
+				price = 6.87;
+				break;
+		}
+
+		total+= price * sales[i];
+
+		document.getElementById('item'+item+'-qty').innerHTML = sales[i];
+		document.getElementById('item'+item+'-price').innerHTML = format_price(price * sales[i]);
+	}
+
+	document.getElementById('total-price').innerHTML = format_price(total);
+	document.getElementById('results').style.display = 'table';
+}
+
+document.getElementById("launchQ7").onclick = function(e) {
+	e.preventDefault();
+	question7();
+}
+
+// no document.onready so just dropping this here
+question7();
+</script>
+
+</body>
+</html>

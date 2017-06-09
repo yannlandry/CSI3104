@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!-- NOTE: The security parameters of some browsers may prevent this document from working with its associated XSL page. However, it has been successfully tested under Firefox 26.0. -->
+
+<?xml-stylesheet type="text/xsl" href="A4_Q7_Landry_7603630.xsl"?>
+
+<foods>
+
+	<item name="Grandma White's cookies">
+		<servingsize>1 package</servingsize>
+		<calories>260</calories>
+		<fatcalories>100</fatcalories>
+		<fat>11 g</fat>
+		<saturatedfat>2 g</saturatedfat>
+		<cholesterol>5 mg</cholesterol>
+		<sodium>210 mg</sodium>
+		<carbohydrates>36 g</carbohydrates>
+		<fibers>2 g</fibers>
+		<sugar>15 g</sugar>
+		<proteins>5 g</proteins>
+	</item>
+
+	<!-- add more items here... -->
+
+</foods>
